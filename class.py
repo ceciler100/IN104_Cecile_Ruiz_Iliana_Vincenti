@@ -36,7 +36,7 @@ class animal(perso):
     
   def presenteToi(self):
     if(self.parle=="oui"):
-      print("Je m' appelle", self.nom)
+      print("Je m' appelle" ,self.nom)
      else:
      print("...")
             
@@ -45,8 +45,8 @@ class animal(perso):
                print(self.nom , self.nom)
             
 def main():
-    sacha=humain("Sacha","pokemon",1990,"dresseur de pokemon","non","noir")
-    carapuce=animal("carapuce","pokemon",1990,"pokemon","non")
+    sacha=humain("Sacha","pokemon",1996,"dresseur de pokemon","non","noir")
+    carapuce=animal("carapuce","pokemon",1996,"pokemon","non")
     humain.presenteToi(sacha)
     animal.presenteToi(carapuce)
     Royal(sacha)
