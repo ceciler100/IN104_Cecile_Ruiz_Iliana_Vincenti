@@ -18,7 +18,14 @@ class perso:
       if(self.metier == 'princesse'):
           print("J'atend mon prince charmant")
           return("oui")
-        elif
+      elif(self.metier in ["roi", "reine","prince"]):
+        print("Je suis royal")
+        return("oui")
+      else:
+        print("je suis du bas peuple")
+        return("non")
+      
+      
     
     
 class animal(perso):
@@ -26,10 +33,23 @@ class animal(perso):
     perso.__init__(self,nom,origine,creation,"animal")
     self.espece=espece
     self.parle=parle
+    
   def presenteToi(self):
     if(self.parle=="oui"):
-      print('Je m'appelle', self.nom)
+      print("Je m' appelle", self.nom)
      else:
      print("...")
-      
+            
+  def  pokemon(self):
+            if(self.espece == "pokemon"):
+               print(self.nom , self.nom)
+            
+def main():
+    sacha=humain("Sacha","pokemon",1990,"dresseur de pokemon","non","noir")
+    carapuce=animal("carapuce","pokemon",1990,"pokemon","non")
+    presenteToi(sacha)
+    presenteToi(carapuce)
+    Royal(sacha)
+    pokemon(carapuce)
     
+            
