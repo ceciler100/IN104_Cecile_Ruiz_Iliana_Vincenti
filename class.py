@@ -47,8 +47,8 @@ class animal(perso):
 def main():
     sacha=humain("Sacha","pokemon",1990,"dresseur de pokemon","non","noir")
     carapuce=animal("carapuce","pokemon",1990,"pokemon","non")
-    presenteToi(sacha)
-    presenteToi(carapuce)
+    humain.presenteToi(sacha)
+    animal.presenteToi(carapuce)
     Royal(sacha)
     pokemon(carapuce)
     
