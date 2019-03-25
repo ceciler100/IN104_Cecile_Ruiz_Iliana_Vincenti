@@ -13,7 +13,7 @@ class perso:
     self.pouvoir=pouvoir
     self.couleurcheveux=couleurcheveux
   def PresenteToi(self):
-     print("Je m' appelle " ,self.nom)
+     print("Je m' appelle " + self.nom)
   def Royal(self):
       if(self.metier == 'princesse'):
           print("J'atend mon prince charmant")
@@ -36,13 +36,13 @@ class animal(perso):
     
   def presenteToi(self):
     if(self.parle=="oui"):
-      print("Je m' appelle" ,self.nom)
+      print("Je m' appelle" + self.nom)
      else:
      print("...")
             
   def  pokemon(self):
             if(self.espece == "pokemon"):
-               print(self.nom , self.nom)
+               print(self.nom +" "+ self.nom)
             
 def main():
     sacha=humain("Sacha","pokemon",1996,"dresseur de pokemon","non","noir")
