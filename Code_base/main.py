@@ -11,7 +11,7 @@ import argparse
 
 
 
-def runEpisode(environment, agent, max_action_per_episode,render=False, debug= False):
+def runEpisode(environment, agent, max_action_per_episode,render=True, debug= False):
     """Run one episode.
 
     Integrate the environment-agent loop until a terminal state is reached,
@@ -47,8 +47,8 @@ def runEpisode(environment, agent, max_action_per_episode,render=False, debug= F
     while (not is_done) and (num_actions<max_action_per_episode):
 
         # To display 
-        # if render:
-            # environment.render()
+        if render:
+            environment.render()
 
         # Update the state, and get the reward and next state
         ancien_state = state                                    #Sauvegarde de l'ancien état qui sera utilisée lors de la détermination du prochain état
@@ -67,8 +67,8 @@ def runEpisode(environment, agent, max_action_per_episode,render=False, debug= F
 
         num_actions += 1
 
-    # if render:
-    #     environment.render()
+    if render:
+        environment.render()
     
     return total_reward
 
@@ -80,7 +80,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--render", help="True for display", default=False)
+    parser.add_argument("--render", help="True for display", default=True)
 
     parser.add_argument("--debug", help="True for display debug info", default=False)
 
@@ -116,7 +116,7 @@ if __name__ == "__main__":
 
         print("Episode ",episode,"starting.")
 
-        render = args.render and episode % 1000 == 0 # to display every 1000 episodes
+        render = args.render and episode % 100 == 0 # to display every 1000 episodes
 
         total_reward = runEpisode(environment, agent, 
                         params['max_action_per_episode'], 
@@ -135,7 +135,7 @@ if __name__ == "__main__":
     #Plot the learning curve
     axes = pyplot.gca()
     axes.set_xlim([0, params['num_training_episodes']])
-    axes.set_ylim([-100, max(y_rewards)])
+    axes.set_ylim([-int(params['max_action_per_episode']), max(y_rewards)])
     pyplot.plot(nb_episode, y_rewards)
     pyplot.show()
 
