@@ -3,7 +3,7 @@ import random
 from agents.Agent import Agent
 import numpy as np
 
-#Cet agent se deplace dans une grille 2D avec la methode Q-learning
+#Cet agent se deplace dans une grille 2D avec la methode Q-learning. Il est identique a l'agent002 a part pour ce qui est des coefficients alpha et gamma de la formule qui ont ete determines de facon optimale grace a l'agent004 et main_parametres_optimaux
 
 ##
 #Notre deuxieme agent qui peut naviguer dans une grille 2D sans obstacles
@@ -32,7 +32,7 @@ def valeur_max(Q, state):
 
 ##
 
-class Agent002(Agent):
+class Agent005(Agent):
 
     def __init__(self, params):
         """See documentation in the base class"""
@@ -50,6 +50,10 @@ class Agent002(Agent):
         #Probabilite d'exploration
         self.exploration = 0.05
         
+        #Coefficients pour la formule de Q
+        self.alpha=0.6
+        self.gamma=1
+        
         
     def start(self, initial_state):
         """See documentation in the base class"""
@@ -61,12 +65,12 @@ class Agent002(Agent):
     def step(self, reward, state, ancien_state, action):
         """See documentation in the base class"""
         
-        self.Q [ancien_state-1, action] = self.Q [ancien_state-1, action] + reward + valeur_max(self.Q, state) - self.Q[ancien_state-1, action]
+        self.Q [ancien_state-1, action] = self.Q [ancien_state-1, action] + self.alpha * (reward + self.gamma*valeur_max(self.Q, state) - self.Q[ancien_state-1, action])
 
         action = self.policy(state)
         return action
         
-    def fin(self, total_reward):
+    def fin(self,total_reward):
         pass
       
         
@@ -79,9 +83,6 @@ class Agent002(Agent):
             return random.randint(0,self.num_actions-1) # Returns a random action
         else :                                          # Choix optimal
             return position_max(self.Q, state)
-            
-            
-            
             
             
             

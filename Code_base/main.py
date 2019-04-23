@@ -48,10 +48,10 @@ def runEpisode(environment, agent, max_action_per_episode,render=True, debug= Fa
 
         # To display 
         if render:
-            environment.render()
+           environment.render()
 
         # Update the state, and get the reward and next state
-        ancien_state = state                                    #Sauvegarde de l'ancien état qui sera utilisée lors de la détermination du prochain état
+        ancien_state = state                                    #Sauvegarde de l'ancien etat qui sera utilisee lors de la determination du prochain etat
         state,reward, is_done = environment.step(action)
     
         total_reward += reward
@@ -66,6 +66,8 @@ def runEpisode(environment, agent, max_action_per_episode,render=True, debug= Fa
         action = agent.step(reward, state, ancien_state, action)
 
         num_actions += 1
+    a=total_reward 
+    agent.fin(a)
 
     if render:
         environment.render()
@@ -129,7 +131,8 @@ if __name__ == "__main__":
         nb_episode.append(episode)
         print("Episode ",episode," done. Total reward: ",total_reward)
         print("_______________________________")
-
+    
+    
     environment.close()
 
     #Plot the learning curve

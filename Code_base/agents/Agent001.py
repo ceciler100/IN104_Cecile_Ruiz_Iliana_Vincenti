@@ -57,6 +57,9 @@ class Agent001(Agent):
 
         action = self.policy(state)
         return action
+    
+    def fin(self, total_reward):
+        pass
       
         
     def policy(self, state):

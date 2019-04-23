@@ -4,6 +4,7 @@ from agents.Agent import Agent
 import numpy as np
 
 #Cet agent se deplace dans une grille 2D avec la methode Q-learning
+#De plus cet agent va permettre de definir quels sont les meilleurs coefficients optimaux alpha et gamma dans la formule du Q-learning pour avoir une vitesse de convergence optimale
 
 ##
 #Notre deuxieme agent qui peut naviguer dans une grille 2D sans obstacles
@@ -32,7 +33,7 @@ def valeur_max(Q, state):
 
 ##
 
-class Agent002(Agent):
+class Agent004(Agent):
 
     def __init__(self, params):
         """See documentation in the base class"""
@@ -50,6 +51,17 @@ class Agent002(Agent):
         #Probabilite d'exploration
         self.exploration = 0.05
         
+        #Coefficients pour la formule de Q
+        self.alpha=1
+        self.gamma=1
+        
+        #vitesse de convergence initialisee (etape a partir de laquelle les recompenses totales sont superieures a 60
+        self.vitesse=0
+        #numero de l'episode qui vient de finir
+        self.ep=0
+        
+        
+        
         
     def start(self, initial_state):
         """See documentation in the base class"""
@@ -61,13 +73,16 @@ class Agent002(Agent):
     def step(self, reward, state, ancien_state, action):
         """See documentation in the base class"""
         
-        self.Q [ancien_state-1, action] = self.Q [ancien_state-1, action] + reward + valeur_max(self.Q, state) - self.Q[ancien_state-1, action]
-
+        self.Q [ancien_state-1, action] = self.Q [ancien_state-1, action] + self.alpha * (reward + self.gamma*valeur_max(self.Q, state) - self.Q[ancien_state-1, action])
+        
         action = self.policy(state)
         return action
-        
-    def fin(self, total_reward):
-        pass
+    
+    def fin(self, total_reward ):
+        self.ep+=1
+        if total_reward<25:
+            self.vitesse=self.ep
+        return self.vitesse
       
         
     def policy(self, state):

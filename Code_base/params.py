@@ -11,17 +11,24 @@ def default_params():
 	params_dict = {
 
 	## Agent parameters
-	# 'agent': 'Agent001',
+	#'agent': 'Agent001',
 
-	'agent': 'Agent002',
+	#'agent': 'Agent002',
+	
+	#'agent': 'Agent003',
+	
+	#'agent': 'Agent004',
+	
+	'agent':'Agent005',
 	
 	## Environment parameters"
 	# 'env':'EnvironmentGrid1D',
 	'num_cells_grid1D': 100, 
 	
-	'env': 'EnvironnementGrille2D',
-	'colonne': 50,
-	'ligne': 50,
+	#'env': 'EnvironnementGrille2D',
+	'env': 'EnvironnementGrille2DObs',
+	'colonne': 20,
+	'ligne': 20,
 
 
 	## Training parameters

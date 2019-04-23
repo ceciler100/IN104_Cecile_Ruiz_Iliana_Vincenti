@@ -2,7 +2,8 @@ import random
 from Agent import Agent
 import numpy as np
 
-
+#Cet agent se deplace avec la methode Monte Carlo
+#ATTENTION LE CODE NE MARCHE PAS ENCORE
 
 ##
 #Notre troisieme Agent qui va apprendre de ses erreurs, adapte pour la grille 2D
@@ -108,7 +109,7 @@ class Agent003(Agent):
         
         return action
         
-    def fin():
+    def fin(total_reward):
         for [e,a ,r ] in self.listeParcours:
             self.Parcours[e][a].append(r)
             
