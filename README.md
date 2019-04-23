@@ -5,4 +5,10 @@ OOP: apprentissage de la programmation des classes (fichier class.py = utilisati
 
 fichier test.py: apprentissage des tests sur python
 
-dossier codes base: codes donnés au début du projet pour une grille en 1D avec un personnage qui se déplace aléatoirement
+dossier codes base: tous les codes du projet sont dedans
+
+Dans dossier "Code_base":
+  main.py: ce qui doit être lancé pour voir l'apprentissage renforcé
+  params.py: contient le nom des différents agents et environnements à appeler et aussi les paramètres de la grille et de l'agent
+  Dossier "agents":
+    
