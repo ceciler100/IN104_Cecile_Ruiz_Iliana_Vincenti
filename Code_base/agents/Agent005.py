@@ -6,7 +6,7 @@ import numpy as np
 #Cet agent se deplace dans une grille 2D avec la methode Q-learning. Il est identique a l'agent002 a part pour ce qui est des coefficients alpha et gamma de la formule qui ont ete determines de facon optimale grace a l'agent004 et main_parametres_optimaux
 
 ##
-#Notre deuxieme agent qui peut naviguer dans une grille 2D sans obstacles
+
 def position_max (Q, state):
     """Retourne la position du maximum de Q a la ligne state"""
     [a,b] = np.shape(Q)
