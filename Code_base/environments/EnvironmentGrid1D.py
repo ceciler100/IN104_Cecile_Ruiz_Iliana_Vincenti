@@ -104,4 +104,4 @@ class EnvironmentGrid1D(Environment):
 
 
     def close(self):
-        if self.viewer: self.viewer.close()
+        if self.viewer: self.viewer.close() 
