@@ -34,6 +34,8 @@ def default_params():
 	'ligne': 25,
 
 
+
+
 	## Training parameters
 	'num_training_episodes':2500,
 	'max_action_per_episode':200
