@@ -19,20 +19,23 @@ def default_params():
 	
 	#'agent': 'Agent004',
 	
-	'agent':'Agent005',
+	#'agent':'Agent005',
+	
+	'agent':'Agent007',
 	
 	## Environment parameters"
 	# 'env':'EnvironmentGrid1D',
 	'num_cells_grid1D': 100, 
 	
 	#'env': 'EnvironnementGrille2D',
-	'env': 'EnvironnementGrille2DObs',
-	'colonne': 20,
-	'ligne': 20,
+	#'env': 'EnvironnementGrille2DObs',
+	'env': 'Labyrinthe',
+	'colonne': 25,
+	'ligne': 25,
 
 
 	## Training parameters
-	'num_training_episodes':1000,
+	'num_training_episodes':2500,
 	'max_action_per_episode':200
 
 	}
