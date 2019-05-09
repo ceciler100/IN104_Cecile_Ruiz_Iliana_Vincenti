@@ -26,7 +26,8 @@ def default_params():
 	'num_cells_grid1D': 100, 
 	
 	#'env': 'EnvironnementGrille2D',
-	'env': 'EnvironnementGrille2DObs',
+	#'env': 'EnvironnementGrille2DObs',
+	'env': 'Labyrinthe',
 	'colonne': 20,
 	'ligne': 20,
 
