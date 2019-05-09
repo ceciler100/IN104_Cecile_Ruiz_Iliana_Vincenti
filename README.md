@@ -1,5 +1,7 @@
 # IN104_Cecile_Ruiz_Iliana_Vincenti
-Pour le projet d'in104
+Pour le projet d'in104: résolution d'un labyrinthe par apprentissage renforcé
+
+Pour utiliser les codes télécharger le dossier Code_base
 
 ->OOP: apprentissage de la programmation des classes (fichier class.py = utilisation des classes pour des personnages de dessin animé)
 
