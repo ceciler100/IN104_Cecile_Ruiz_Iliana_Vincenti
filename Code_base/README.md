@@ -34,3 +34,15 @@ $ pip install --user gym
    
  
  ->Dossier "environments": contient les différentes grilles que les agents doivent explorer
+   - Environment.py: définition de la classe des différents environnements
+   - EnvironmentGrid1D.py: classe de la grille à une dimension (définir le nombre de cases dans params.py). A utiliser avec AgentRandom et Agent001
+   - EnvironnementGrille2D.py: classe de la grille à deux dimensions (définir le nombre de lignes et de colonnes dans params.py). A utiliser avec les agents 002 à 007
+   - EnvironnementGrille2DObs.py: classe de la grille à deux dimensions (définir le nombre de lignes et de colonnes dans params.py) avec peu d'obstacles. A utiliser avec les agents 002 à 007
+   - Labyrinthe.py: classe de la grille à deux dimensions avec un labyrinthe prédéfini --> ATTENTION: à utiliser avec une grille de taille 25 * 25. A utiliser avec les agents 002 à 007
+   - load_env: dictionnaire répertoriant les différentes grilles
+ 
+ 
+ 
+ 
+ 
+ 
