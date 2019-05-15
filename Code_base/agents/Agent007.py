@@ -74,7 +74,7 @@ class Agent007(Agent):
         #a la fin de l'episode on modifie le coefficient d'eploration en fonction de la recompense finale
         if total_reward < 50:
             self.exploration=0.08      #si la recompense est faible on doit s'ameliorer et donc explorer beaucoup
-        elif total_reward < 0.04:
+        elif total_reward < 120:
             self.exploration=0.04
         else :
             self.exploration=0     #si la recompense est tres haute on peut arreter d'explorer, on considere qu on a trouve la solution optimale
