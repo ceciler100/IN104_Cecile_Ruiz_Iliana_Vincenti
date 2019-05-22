@@ -3,7 +3,7 @@ Pour lancer le code :
 Taper dans le terminal: (modifier si besoin les paramètres dans le fichier params.py)
 
 ```commandline
-$python3 main.py
+$python main.py
 ```
 
 To install gym : 
